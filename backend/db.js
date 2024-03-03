@@ -1,7 +1,9 @@
-const mongoose = require ("mongoose");
+require('dotenv').config(); // Load environment variables from .env file
+
+const mongoose = require("mongoose");
 const { Schema, number } = require("zod");
 
-mongoose.connect("mongodb+srv://vinitshirbhate:vinit%40123@learn.e17hwcy.mongodb.net/");
+mongoose.connect(process.env.MONGODB_URI); // Use process.env to access environment variables
 
 const userSchema = new mongoose.Schema({
     username:{
